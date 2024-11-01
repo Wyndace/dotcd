@@ -115,7 +115,7 @@ pub fn run() {
         .working_directory("/tmp")
         .stdout(File::create("/tmp/dotcd-daemon-tray.out").unwrap())
         .stderr(File::create("/tmp/dotcd-daemon-tray.error").unwrap())
-        .user(console::whoami());
+        .user(console::whoami().as_str());
 
     match daemonize.start() {
         Ok(_) => {
