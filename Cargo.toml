@@ -1,0 +1,16 @@
+[package]
+name = "dotcd"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nix = "0.29.0"
+reqwest = { version = "0.12.9", features = ["json"] }
+tokio = { version = "1.0.0", features = ["rt", "rt-multi-thread", "macros"] }
+serde = { version = "1.0.214", features = ["derive"] }
+configparser = "3.1.0"
+clap = { version = "4.5.20", features = ["derive"] }
+appindicator3 = "0.3.0"
+gtk = "0.18.1"
+daemonize = "0.5.0"
+whoami = "1.5.2"
