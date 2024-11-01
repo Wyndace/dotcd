@@ -1,6 +1,9 @@
 use std::process::Command;
 
 
+pub fn whoami() -> String {
+    String::from_utf8(Command::new("whoami").output().unwrap().stdout).unwrap()
+}
 fn check_notify() -> bool {
     Command::new("which")
         .arg("notify-send")
