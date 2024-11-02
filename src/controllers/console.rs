@@ -1,8 +1,9 @@
+use std::env;
 use std::process::Command;
 
 
 pub fn whoami() -> String {
-    String::from_utf8(Command::new("whoami").output().unwrap().stdout).unwrap()
+    env::var("USER").unwrap_or_else(|_| "unknown".to_string())
 }
 fn check_notify() -> bool {
     Command::new("which")
